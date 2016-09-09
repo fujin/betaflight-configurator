@@ -66,6 +66,9 @@ TABS.ports.initialize = function (callback, scrollPosition) {
         '115200',
         '230400',
         '250000',
+        '1500000',
+        '2000000',
+        '2470000'
     ];
 
     var columns = ['data', 'logging', 'gps', 'telemetry', 'rx'];

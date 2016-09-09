@@ -438,15 +438,18 @@ MspHelper.prototype.process_data = function(dataHandler) {
 
         case MSPCodes.MSP_CF_SERIAL_CONFIG:
             var supportedBaudRates = [ // 0 based index.
-                                       'AUTO',
-                                       '9600',
-                                       '19200',
-                                       '38400',
-                                       '57600',
-                                       '115200',
-                                       '230400',
-                                       '250000',
-                                   ];
+                'AUTO',
+                '9600',
+                '19200',
+                '38400',
+                '57600',
+                '115200',
+                '230400',
+                '250000',
+                '1500000',
+                '2000000',
+                '2470000'
+            ];
             if (semver.lt(CONFIG.apiVersion, "1.6.0")) {
                 SERIAL_CONFIG.ports = [];
                 var serialPortCount = (data.byteLength - (4 * 4)) / 2;
@@ -1038,14 +1041,17 @@ MspHelper.prototype.crunch = function(code) {
             break;
         case MSPCodes.MSP_SET_CF_SERIAL_CONFIG:
             var supportedBaudRates = [ // 0 based index.
-                                       'AUTO',
-                                       '9600',
-                                       '19200',
-                                       '38400',
-                                       '57600',
-                                       '115200',
-                                       '230400',
-                                       '250000',
+                'AUTO',
+                '9600',
+                '19200',
+                '38400',
+                '57600',
+                '115200',
+                '230400',
+                '250000',
+                '1500000',
+                '2000000',
+                '2470000'
                                    ]; //TODO, instead of lookuptable, this should be sent as uint32
             var serialPortFunctions = {
                 'MSP': 0,
